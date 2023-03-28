@@ -7,7 +7,7 @@ Alright, detective, one of our colleagues successfully observed our target perso
 The keypad has the following layout:
 
 ┌───┬───┬───┐  
-│  1  │  2  │  3  │  
+│&nbsp;1&nbsp;│&nbsp;2&nbsp;│&nbsp;3&nbsp;│  
 ├───┼───┼───┤  
 │ 4 │ 5 │ 6 │  
 ├───┼───┼───┤  
