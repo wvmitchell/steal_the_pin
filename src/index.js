@@ -26,15 +26,15 @@ function findPossibleNums(num, pinPad) {
     {row: 0, idx: 0},   // Original number
     {row: -1, idx: 0},  // Go up (-1 row, same index)
     {row: 1, idx: 0},   // Go down (+1 row, same index)
-    {row: 0, idx: 1},    // Go left (same row, -1 index)
+    {row: 0, idx: 1},   // Go left (same row, -1 index)
     {row: 0, idx: -1}   // Go right (same row, +1 index)
   ]
 
-  return movements.reduce((possibleNums, movement, i) => {
+  return movements.reduce((possibleNums, movement) => {
     const newRow = numRow + movement.row;
     const newIdx = numIndex + movement.idx;
     
-    // condition to make sure it's a valid movement position in the pin pad and not null
+    // Check movement is a valid adjacent position in the pin pad and not null
     if (newRow >=0 && newRow <= 2 && newIdx >= 0 && newIdx <= 2) {
       const numFromMovement = pinPad[newRow][newIdx];
       if (numFromMovement !== null) possibleNums.push(numFromMovement);
@@ -45,8 +45,3 @@ function findPossibleNums(num, pinPad) {
 }
 
 module.exports = getPINs;
-
-// 1 2 3
-// 4 5 6
-// 7 8 9
-// _ 0 _
