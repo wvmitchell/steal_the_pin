@@ -15,58 +15,58 @@ describe('getPINs', function() {
 
   for (let pin in expectations) {
 
-    it.skip(`Testing PIN='${pin}'`, () => {
+    it(`Testing PIN='${pin}'`, () => {
       assert.sameMembers(getPINs(pin), expectations[pin]);
     });
   }
 
-  it.skip('should return the observed PIN when it has only one digit', function() {
+  it('should return the observed PIN when it has only one digit', function() {
     const result = getPINs('1');
     assert.lengthOf(result, 3);
   });
 
-  it.skip('should return all variations for a two-digit observed PIN', function() {
+  it('should return all variations for a two-digit observed PIN', function() {
     const result = getPINs('12');
     assert.lengthOf(result, 12);
   });
 
-  it.skip('should return all variations for a three-digit observed PIN', function() {
+  it('should return all variations for a three-digit observed PIN', function() {
     const result = getPINs('123');
     assert.lengthOf(result, 36);
   });
 
-  it.skip('should return all variations for a four-digit observed PIN', function() {
+  it('should return all variations for a four-digit observed PIN', function() {
     const result = getPINs('1234');
     assert.lengthOf(result, 144);
   });
 
-  it.skip('should return all variations for a five-digit observed PIN', function() {
+  it('should return all variations for a five-digit observed PIN', function() {
     const result = getPINs('12345');
     assert.lengthOf(result, 720);
   });
 
-  it.skip('should return all variations for a six-digit observed PIN', function() {
+  it('should return all variations for a six-digit observed PIN', function() {
     const result = getPINs('123456');
     assert.lengthOf(result, 2880);
   });
 
-  it.skip('should return all variations for a seven-digit observed PIN', function() {
+  it('should return all variations for a seven-digit observed PIN', function() {
     const result = getPINs('1234567');
     assert.lengthOf(result, 8640);
   });
 
-  it.skip('should return all variations for an eight-digit observed PIN', function() {
+  it('should return all variations for an eight-digit observed PIN', function() {
     const result = getPINs('12345678');
     assert.lengthOf(result, 43200);
   });
 
-  it.skip('should return only valid digits in the result', function() {
+  it('should return only valid digits in the result', function() {
     const result = getPINs('058');
     const isValid = result.every(pin => /^[0-9]+$/.test(pin));
     assert.isTrue(isValid);
   });
 
-  it.skip('should return unique PINs in the result', function() {
+  it('should return unique PINs in the result', function() {
     const result = getPINs('123');
     const uniquePins = [...new Set(result)];
     assert.lengthOf(uniquePins, result.length);
